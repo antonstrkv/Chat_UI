@@ -19,7 +19,7 @@
             <div class="container">
                 <div class="dialog__top">
                     <button class="dialog__btn-settings">Settings</button>
-                    <button class="dialog__btn-exit">Sigh in</button>
+                    <button class="dialog__btn-exit">Log in</button>
                 </div>
                 <div class="dialog__message-box">
 
@@ -28,7 +28,7 @@
 
                 </div>
                 <form class="dialog__bottom" onsubmit="return false">
-                    <input type="text" class="dialog__message-input" placeholder="Enter your message here..">
+                    <input type="text" class="dialog__message-input" placeholder="Enter your message here.." required>
                     <button class="dialog__message-submit" type="submit">-></button>
                 </form>
             </div>
@@ -41,11 +41,10 @@
                     <button class="settings__close"></button>
                 </div>
                 <p class="settings__text">Name in the chat</p>
-                <div class="settings__bottom">
-                    <input type="text" class="settings__input" placeholder="Enter your name">
-                    <button class="settings__submit">-></button>
-                </div>
-                <div class="Notification">Name successfully changed!</div>
+                <form class="settings__bottom" onsubmit="return false">
+                    <input type="text" class="settings__input" placeholder="Enter your name" required>
+                    <button class="settings__submit" type="submit">-></button>
+                </form>
             </div>
         </div>
 
@@ -56,12 +55,14 @@
                     <button class="authorization__close"></button>
                 </div>
                 <p class="authorization__text">Email:</p>
-                <div class="authorization__bottom">
-                    <input type="text" class="authorization__input" placeholder="Enter your email">
-                    <button class="authorization__submit">Get the code</button>
-                </div>
+                <form class="authorization__bottom" onsubmit="return false">
+                    <input type="text" class="authorization__input"
+                        placeholder="example@domain.com"
+                        required>
+                    <button class="authorization__submit" type="submit">Get the code</button>
+                </form>
                 <div class="hasCode">Already have a code?
-                    <span class="Enter">Enter code</span>
+                    <span class="Enter">Enter the code</span>
                 </div>
             </div>
         </div>
@@ -73,10 +74,22 @@
                     <button class="confirmation__close"></button>
                 </div>
                 <p class="confirmation__text">Code:</p>
-                <div class="confirmation__bottom">
-                    <input type="text" class="confirmation__input" placeholder="Enter code">
-                    <button class="confirmation__submit">Save code</button>
+                <form class="confirmation__bottom" onsubmit="return false">
+                    <input type="text" class="confirmation__input" placeholder="Enter code" required>
+                    <button class="confirmation__submit" type="submit">Save code</button>
+                </form>
+            </div>
+        </div>
+
+
+        <div class="notice">
+            <div class="notice-container">
+                <div class="notice__top">
+                    <p class="notice__text_top">Notification</p>
+                    <button class="notice__close"></button>
                 </div>
+                <p class="notice__text"></p>
+                    <button class="notice__submit">Ok</button>
             </div>
         </div>
 
@@ -93,7 +106,7 @@
         <template id="tmp2">
             <li class="dialog__someone_message dialog__message dialog__delivered_message">
                 <div class="message-inner" bis_skin_checked="1">
-                    <div class="userNoSelect" bis_skin_checked="1"></div>
+                    <div class="userNoSelect someoneMessage" bis_skin_checked="1"></div>
                     <div class="dialog__message-text"></div>
                 </div>
                 <span class="dialog__message-time"></span>
@@ -101,8 +114,10 @@
         </template>
 
     </main>
-    <script src="main.mjs" type="module"></script>
-    <script src="listeners.js" type="module"></script>
+    <script src="./helperFunctions/main.mjs" type="module"></script>
+    <script src="./LISTENERS/listeners.js" type="module"></script>
+    <script src="./webSocket/webSocket.js" type="module"></script>
+    <script src="./scrollHistory/scroll.js" type="module"></script>
 </body>
 
 </html>

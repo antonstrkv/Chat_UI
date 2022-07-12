@@ -8,7 +8,7 @@
 }
 
 body {
-	background: #ffffff;
+	background: #F1F5F6;
 	height: 100vh;
 	display: flex;
 	justify-content: center;
@@ -27,9 +27,13 @@ button {
 
 }
 
-.authorization__submit:hover, .settings__submit:hover,
- .dialog__btn-settings:hover, .dialog__btn-exit:hover, 
- .dialog__message-submit:hover, .confirmation__submit:hover {
+.authorization__submit:hover,
+.settings__submit:hover,
+.dialog__btn-settings:hover,
+.dialog__btn-exit:hover,
+.dialog__message-submit:hover,
+.confirmation__submit:hover,
+.notice__submit:hover {
 	background-color: rgba(99, 99, 99, 0.01);
 	box-shadow: rgba(0, 0, 0, 0.3) 1px 2px 5px 0px;
 }
@@ -39,30 +43,40 @@ button {
 	height: 533px;
 }
 
+.settings-container,
+.authorization-container,
+.confirmation-container,
+.notice-container {
+	background-color: rgba(99, 99, 99, 0.01);
+	box-shadow: rgba(0, 0, 0, 0.3) 1px 2px 5px 0px;
+}
+
 .container {
-	background-color: #ffffff;
-	padding: 8px;
+	background: linear-gradient(90deg, #1D9CC5 0, #547ACA 100%) no-repeat;
+	padding: 8px 0px 8px 0px;
 	max-width: 320px;
-	box-shadow: rgba(0, 0, 0, 0.2) 1px 3px 5px 0px;
+	box-shadow: 4px 4px 4px #4f4f4f;
 	border-radius: 5px;
-	border: 1px solid #a9a9a9;
+	border: 1px solid #6262b3;
 }
 
 .dialog__top {
 	display: flex;
 	justify-content: space-between;
 	margin-bottom: 7px;
-
 }
+
 
 .dialog__btn-settings,
 .dialog__btn-exit {
 	font-size: 13px;
 	width: 21%;
 	height: 32px;
-	color: #ffffff;
+	margin-left: 8px;
+	margin-right: 8px;
+	color: #000000;
 	padding: 7px;
-	background: linear-gradient(90deg, #39aea9 0, #4580b3 100%) no-repeat;
+	background: linear-gradient(90deg, #ffffff 0, #e3ebf2 100%) no-repeat;
 	border: 1px solid #39aea9;
 	border-radius: 5px;
 	box-shadow: 1px 2px 5px #60568f33;
@@ -77,10 +91,12 @@ button {
 	overflow: scroll;
 	display: flex;
 	flex-flow: column-reverse nowrap;
-	border-radius: 5px;
-	background: linear-gradient(180deg, #4580b3 0, #39aea9 100%) no-repeat;
-	border: 1px solid #39aea9;
-	overflow-x:hidden;
+	background: linear-gradient(90deg, #1D9CC5 0, #547ACA 100%) no-repeat;
+	overflow-x: hidden;
+	border-bottom: 1px solid #ffffff;
+	border-top: 1px solid #ffffff;
+	padding: 8px;
+	margin-bottom: 8px;
 }
 
 .dialog__message {
@@ -88,7 +104,6 @@ button {
 	flex-direction: column;
 	padding: 8px;
 	max-width: 272px;
-
 }
 
 
@@ -103,14 +118,28 @@ button {
 
 }
 
+.notification_message {
+	display: flex;
+	flex-direction: column;
+	margin: auto;
+}
+
+.notofication-text {
+	font-size: 13px;
+	user-select: none;
+	color: #ECC781;
+	margin-bottom: 8px;
+}
+
 .dialog__delivered_message {
 	background-color: #ffffff;
 	box-shadow: 1px 2px 5px #00000033;
+	color: #000000;
 }
 
 .dialog__send_message {
 	background-color: #ffffff;
-	box-shadow: rgba(0, 0, 0, 0.2) 1px 2px 5px 0px;
+	box-shadow: rgba(67, 64, 64, 0.2) 1px 2px 5px 0px;
 	border: 2px solid #f10f0f;
 }
 
@@ -120,7 +149,6 @@ button {
 	display: -ms-flexbox;
 	display: flex;
 	gap: 4px;
-
 }
 
 .message-inner .userNoSelect {
@@ -128,14 +156,18 @@ button {
 	-moz-user-select: none;
 	-ms-user-select: none;
 	user-select: none;
+	font-size: 14px;
 
 }
+
 
 .dialog__message-text {
 	word-break: break-word;
+	font-size: 14px;
 }
 
 .dialog__message-time {
+	font-size: 13px;
 	align-self: flex-end;
 	margin-top: 4px;
 	font-style: italic;
@@ -146,6 +178,8 @@ button {
 .dialog__personal_message {
 	align-self: flex-end;
 	border-radius: 5px;
+	transition: background 0.5s ease;
+	;
 }
 
 .dialog__someone_message {
@@ -162,33 +196,38 @@ button {
 
 .dialog__message-input {
 	height: 100%;
-	width: 82%;
+	width: 78%;
 	padding: 7px;
-	background-color: inherit;
+	margin-left: 8px;
+	font-size: 14px;
+	background-color: #FFFFFF;
 	box-shadow: rgba(99, 99, 99, 0.2) 1px 2px 5px 0px;
 	border-radius: 5px;
 	outline: unset;
 	border: 1px solid rgba(75, 67, 102, 0.2);
 }
 
+.personalMessage {
+	color: #1c5b92;
+}
+
+.someoneMessage {
+	color: #000000;
+}
+
 .dialog__message-submit {
 	padding: 7px;
 	width: 15%;
 	height: 100%;
-	border: 1px solid #000;
-	color: #FFFFFF;
-	background: linear-gradient(90deg, #39aea9 0, #4580b3 100%) no-repeat;
+	margin-right: 8px;
+	font-size: 14px;
+	color: #000000;
+	background: linear-gradient(90deg, #ffffff 0, #e3ebf2 100%) no-repeat;
 	border: 1px solid #39aea9;
 	border-radius: 5px;
 	box-shadow: 1px 2px 5px #60568f33;
 }
 
-.dialog__message-box {
-	border: 1px solid #000000;
-
-	padding: 8px;
-	margin-bottom: 8px;
-}
 
 .dialog__message-box::-webkit-scrollbar {
 	width: 0 ! important
@@ -255,7 +294,7 @@ button {
 	padding: 6px 8px;
 	border: 1px solid #000;
 	color: #FFFFFF;
-	background: linear-gradient(90deg, #39aea9 0, #4580b3 100%) no-repeat;
+	background: linear-gradient(90deg, #1D9CC5 0, #547ACA 100%) no-repeat;
 	border: 1px solid #39aea9;
 	border-radius: 5px;
 	box-shadow: 1px 2px 5px #60568f33;
@@ -265,24 +304,17 @@ button {
 	opacity: 100%;
 }
 
-.Notification {
-	margin-top: 15px;
-	display: none;
-	color: #48d030;
-	user-select: none;
-}
 
 .authorization {
 	height: 100vh;
 	width: 100vw;
-	background-color: rgba(0, 0, 0, 0.96);
+	background-color: rgba(0, 0, 0, 0.5);
 	display: none;
 	justify-content: center;
 	align-items: center;
 	top: 0;
 	left: 0;
 	position: absolute;
-
 }
 
 .authorization-container {
@@ -333,7 +365,7 @@ button {
 	height: 32px;
 	border: 1px solid #000;
 	color: #FFFFFF;
-	background: linear-gradient(90deg, #39aea9 0, #4580b3 100%) no-repeat;
+	background: linear-gradient(90deg, #1D9CC5 0, #547ACA 100%) no-repeat;
 	border: 1px solid #39aea9;
 	border-radius: 5px;
 	box-shadow: 1px 2px 5px #60568f33;
@@ -363,14 +395,14 @@ button {
 
 .Enter:hover {
 	text-decoration: underline;
-	color: #39aea9;
+	color: #547ACA;
 	cursor: pointer;
 }
 
 .confirmation {
 	height: 100vh;
 	width: 100vw;
-	background-color: rgba(0, 0, 0, 0.96);
+	background-color: rgba(0, 0, 0, 0.5);
 	display: none;
 	justify-content: center;
 	align-items: center;
@@ -425,10 +457,9 @@ button {
 .confirmation__submit {
 	width: 50%;
 	height: 32px;
-
 	border: 1px solid #000;
 	color: #FFFFFF;
-	background: linear-gradient(90deg, #39aea9 0, #4580b3 100%) no-repeat;
+	background: linear-gradient(90deg, #1D9CC5 0, #547ACA 100%) no-repeat;
 	border: 1px solid #39aea9;
 	border-radius: 5px;
 	box-shadow: 1px 2px 5px #60568f33;
@@ -439,6 +470,71 @@ button {
 	width: 50px;
 	height: 19px;
 	font-family: 'Roboto';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 19px;
+}
+
+.notice {
+	height: 100vh;
+	width: 100vw;
+	background-color: rgba(0, 0, 0, 0.5);
+	display: none;
+	justify-content: center;
+	align-items: center;
+	top: 0;
+	left: 0;
+	position: absolute;
+}
+
+.notice-container {
+	background: #FFFFFF;
+	padding: 12px 12px 0px 15px;
+	width: 400px;
+	height: 170px;
+	border-radius: 5px;
+	border-radius: 5px;
+	box-shadow: rgba(214, 212, 225, 0.2) 1px 2px 5px 0px;
+}
+
+.notice__top {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 35px;
+	user-select: none;
+
+}
+
+.notice__close {
+	width: 16px;
+	height: 16px;
+	background-image: url("./img/close-icon.svg");
+	background-position: center;
+}
+
+
+.notice__submit {
+	margin-left: 330px;
+	margin-top: 40px;
+	width: 45px;
+	height: 32px;
+	border: 1px solid #000;
+	color: #FFFFFF;
+	background: linear-gradient(90deg, #1D9CC5 0, #547ACA 100%) no-repeat;
+	border: 1px solid #39aea9;
+	border-radius: 5px;
+	box-shadow: 1px 2px 5px #60568f33;
+}
+
+
+.notice__text {
+	width: 380px;
+	height: 19px;
+	padding-right: 12px;
+	font-family: 'Roboto';
+	user-select: none;
 	font-style: normal;
 	font-weight: 400;
 	font-size: 16px;
